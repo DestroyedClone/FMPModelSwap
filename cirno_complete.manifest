@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 1135705591
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3d612e4f72e0f5e72f527ed1298687f9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: cb5cff3a1350143ce413b676b0fb473f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/cirno/cirno_low_Material_u1_v1_ambient_occlusion.png
+- Assets/cirno/cirno_mat.mat
+- Assets/cirno/cirno_low.obj
+- Assets/cirno/cirno_complete.prefab
+- Assets/cirno/cirno_low_u1_v1.jpg
+- Assets/cirno/cirno_low_Material_u1_v1_normal_base.png
+Dependencies: []

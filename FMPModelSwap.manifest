@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3631695854
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: cirno_complete
+      Dependencies: {}
