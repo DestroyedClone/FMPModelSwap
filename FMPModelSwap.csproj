@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="cirno_complete" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="cirno_complete">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>lib\0Harmony.dll</HintPath>
     </Reference>
