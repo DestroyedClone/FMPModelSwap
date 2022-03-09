@@ -1,5 +1,4 @@
 ﻿using BepInEx;
-using R2API.Utils;
 using System.Reflection;
 using System.Security;
 using System.Security.Permissions;
@@ -13,9 +12,7 @@ using System.Collections.Generic;
 
 namespace FMPModelSwap
 {
-    [BepInPlugin("com.DestroyedClone.ForgiveFumoPlease", "Forgive Fumo Please", "1.0.0")]
-    [BepInDependency(R2API.R2API.PluginGUID, R2API.R2API.PluginVersion)]
-    [NetworkCompatibility(CompatibilityLevel.NoNeedForSync, VersionStrictness.DifferentModVersionsAreOk)]
+    [BepInPlugin("com.DestroyedClone.ForgiveFumoPlease", "Forgive Fumo Please", "1.0.1")]
     public class Main : BaseUnityPlugin
     {
         public static GameObject DeathProjectile = Resources.Load<GameObject>("Prefabs/Projectiles/DeathProjectile");
@@ -49,24 +46,10 @@ namespace FMPModelSwap
 
         public static void ModifyPrefab()
         {
-            //var assetCopy = Instantiate(cirnoAsset);
-            //var smr = DeathProjectile.GetComponentInChildren<SkinnedMeshRenderer>();
-            //assetCopy.transform.SetParent(DeathProjectile.transform);
-
             var smr = DeathProjectile.GetComponentInChildren<SkinnedMeshRenderer>();
             smr.SetMaterials(new List<Material>(cirnoAsset.GetComponentInChildren<MeshRenderer>().materials));
             smr.sharedMesh = cirnoAsset.GetComponentInChildren<MeshFilter>().sharedMesh;
             smr.transform.parent.localScale = Vector3.one * 0.03f;
-
-            //DeathProjectile.GetComponentInChildren<MeshFilter>().sharedMesh = cirnoAsset.GetComponentInChildren<MeshFilter>().sharedMesh;
-            //var meshRenderer = DeathProjectile.GetComponentInChildren<MeshRenderer>();
-            //meshRenderer.material = moneyAsset.GetComponentInChildren<MeshRenderer>().material;
-            //meshRenderer.SetMaterials(new List<Material>(cirnoAsset.GetComponentInChildren<MeshRenderer>().materials));
-            //meshRenderer.transform.localScale = Vector3.one * 9;
-            //Destroy(ShareMoneyPack.transform.Find("Display/Mesh/Particle System").gameObject);
-
-            //DeathProjectile.name = "gay";
-            //assetCopy.transform.localPosition = Vector3.zero;
         }
     }
 }
