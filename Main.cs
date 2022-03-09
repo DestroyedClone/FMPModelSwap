@@ -1,9 +1,9 @@
 ﻿using BepInEx;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Security;
 using System.Security.Permissions;
 using UnityEngine;
-using System.Collections.Generic;
 
 [module: UnverifiableCode]
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -15,11 +15,11 @@ namespace FMPModelSwap
     [BepInPlugin("com.DestroyedClone.ForgiveFumoPlease", "Forgive Fumo Please", "1.0.1")]
     public class Main : BaseUnityPlugin
     {
-        public static GameObject DeathProjectile = Resources.Load<GameObject>("Prefabs/Projectiles/DeathProjectile");
+        public static GameObject DeathProjectile;
         public static AssetBundle MainAssets;
         public static GameObject cirnoAsset;
 
-        public void Awake()
+        public void Start()
         {
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("FMPModelSwap.cirno_complete"))
             {
@@ -30,6 +30,7 @@ namespace FMPModelSwap
 
             //On.RoR2.CharacterBody.Start += CharacterBody_Start;
 
+            DeathProjectile = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/DeathProjectile");
             ModifyPrefab();
         }
 
